@@ -1,0 +1,38 @@
+<div class="col-md-4 pull-right mt-10">
+  <%= form_tag '/contacts', method: :get, class: 'search-global', autocomplete: 'off', remote: true do %>
+    <input class="form-control" type="text" name="search_by_name_or_number" placeholder="Type and Enter to search by Number or Name">
+  <% end %>
+</div>
+<div class="mt-25">
+  <input type="hidden" name="sort_path" data-path="<%= sort_path %>">
+  <div class="table-responsive"> 
+    <table class="table contact_details">
+      <thead>
+        <tr>
+          <th>
+            <span class="sort_option" style="cursor: pointer;">Name</span>
+            <span>
+              <i class="sort" style="color: #f48e00;" aria-hidden="true"></i>
+            </span>
+          </th>
+          <th>Email</th>
+          <th>Mobile number</th>
+          <th>Landline Number</th>
+          <th>Notes</th>
+          <th>Image</th>
+          <th>
+            <span class="sort_option" style="cursor: pointer;">Created On</span>
+            <span>
+              <i class="fa fa-caret-down sort" style="color: #f48e00;" aria-hidden="true"></i>
+            </span>
+          </th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="contact_records">
+        <%= render 'contacts_list' %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="mt-50"></div>

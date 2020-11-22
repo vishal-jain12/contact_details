@@ -1,0 +1,21 @@
+<% if @contacts.present? %>
+  <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= contact.name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.mobile_number %></td>
+      <td><%= contact.landline_number %></td>
+      <td><%= contact.notes %></td>
+      <% src = contact.image.present? ? contact.image_url : '' %>
+      <td><% if src.present? %><%= image_tag src, class: "profile-avatar", width: 50, height: 50 %><% end %></td>
+      <td><%= contact.created_at.strftime('%d-%m-%y') %></td>
+      <td>
+        <%= link_to 'Show', contact %>
+        <%= link_to 'Edit', edit_contact_path(contact) %>
+        <%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+<% else %>
+  <tr><td class="text-center" colspan="10">No Contacts Available</td></tr>
+<% end %>

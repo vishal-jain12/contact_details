@@ -1,0 +1,53 @@
+<div class="pl-15">  
+  <p>
+    <strong>First name:</strong>
+    <%= @contact.first_name %>
+  </p>
+
+  <p>
+    <strong>Middle name:</strong>
+    <%= @contact.middle_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= @contact.last_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @contact.email %>
+  </p>
+
+  <p>
+    <strong>Mobile number:</strong>
+    <%= @contact.mobile_number %>
+  </p>
+
+  <p>
+    <strong>Landline number:</strong>
+    <%= @contact.landline_number %>
+  </p>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= @contact.notes %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <% if @contact.image.present? %>
+      <%= image_tag @contact.image_url, class: "profile-avatar", width: 50, height: 50 %>
+    <% end %>
+  </p>
+
+  <div id="viewable_count">
+    <h5>Viewable Count Chart</h5>
+    <%if false%>
+      <%= link_to "<i class='fa fa-filter'></i>".html_safe, "#", class: 'label label-primary show-filter', data: {toggle: "modal", link: '', target: "#analytic-filter-box"}, style: "background: rgb(254, 102, 1)" %>
+      <%= link_to "<i class='fa fa-download'></i>".html_safe, download_report_company_analytics_path(@company, report_name: 'attrition_count'), class: 'label label-primary', style: "background: rgb(254, 102, 1)"%>
+    <%end%>
+    <%= render 'viewable_count' %>
+  </div>
+</div>
+<div class="mt-50"></div>

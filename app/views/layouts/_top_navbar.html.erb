@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">User Contacts</a>
+    <form class="form-inline">
+      <div style="padding-left: 10px;">
+        <%= link_to 'Add Contact', new_contact_path, class: 'btn btn-outline-success navbar-button' %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-danger ml-5', method: :delete %>
+      <% end %>
+    </form>
+  </div>
+</nav>

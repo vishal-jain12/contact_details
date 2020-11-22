@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Detail</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/top_navbar' %>
+    <div class="container">
+      <div class="col-sm-12"> <%= flash_messages %></div>
+      <% unless current_page?('/') %>
+        <div class="btn-group col-sm-12 mt-25">
+          <%= link_to 'Home', root_path, class: 'btn btn-outline-dark' %>
+        </div>
+        <hr>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
