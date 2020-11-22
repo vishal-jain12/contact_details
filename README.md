@@ -24,3 +24,7 @@
 10. We can sort the record on date and name of the person.
 
 11. We can also search the record by number or name.
+
+12. On Contact view page, we can check the view count graph.
+
+13. Chart.js graph has been to view the graph of the total views count in the last 7 days.
